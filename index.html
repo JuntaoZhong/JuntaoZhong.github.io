@@ -21,108 +21,160 @@
           width: 100%;
         }
         .floatRight {float: right;}
+        #navbar 
+        {
+          z-index: 2000;
+        }
+        .content {
+          padding: 60px;
+        }
+
+        .sticky {
+          position: fixed;
+          top: 0;
+          width: 100%;
+        }
+
+        .sticky + .content {
+          padding-top: 60px;
+        }
     </style>  
     
   </head>
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="https://juntaozhong.github.io/">Jimmy (Juntao) Zhong</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="https://juntaozhong.github.io/">About Me <span class="sr-only">(current)</span></a>
-        </li> 
-        <li class="nav-item">
-          <a class="nav-link" href="#Blogs">Blogs</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#Links&Contacts">Links & Contacts</a>
-        </li>
-      </ul>
-    </div>
-    <div class="floatRight"><a href="chinese.html">中文</a> / English</div>
-  </nav>
-  <body>
-    <div class="row">
-      <div class="col-lg-5">
-        <img src="img/homeSelfie.jpg">
+  <div id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="https://juntaozhong.github.io/">Jimmy (Juntao) Zhong</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#AboutMe">About Me <span class="sr-only">(current)</span></a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="#Blogs">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Links&Contacts">Links & Contacts</a>
+          </li>
+        </ul>
       </div>
-      <div class="col-lg-7"> <!-- offset-lg-1 -->
-        <div class="container">
-          <h2> let me write something</h2>
-        <p>
-          I'm an international student in Carleton College (Class of 2023), MN, US. 
-          I'm interested in a lot of different things (that's why I go to a liberal arts college):
-          I love Computer Science, Economics, and Biology; I enjoy wrestling, weight lifting, and jogging;
-          I play the accordion and sing baritone. 
-        </p> 
-          
-        <p>
-          Before high school, I lived in Foshan, China (a city near HongKong). I then went to high school in Seattle. 
-          I can talk with you in Mandarin, Cantonese, Hakka(客家话), and in very little Spanish.
-        </p>
-        <a href="Jimmy Zhong resume.pdf" download>Download PDF Resume</a>
+      <div class="floatRight"><a href="chinese.html">中文</a> / English</div>
+    </nav>
+  </div>
+  
+  <body>
+    <div class="content">
+    <section id="AboutMe">
+      <div class="row">
+        <div class="col-lg-5">
+          <img src="img/homeSelfie.jpg">
+        </div>
+        <div class="col-lg-7"> <!-- offset-lg-1 -->
+          <div class="container">
+            <h2> let me write something</h2>
+          <p>
+            I'm an international student in Carleton College (Class of 2023), MN, US. 
+            I'm interested in a lot of different things (that's why I go to a liberal arts college):
+            I love Computer Science, Economics, and Biology; I enjoy wrestling, weight lifting, and jogging;
+            I play the accordion and sing baritone. 
+          </p> 
+            
+          <p>
+            Before high school, I lived in Foshan, China (a city near HongKong). I then went to high school in Seattle. 
+            I can talk with you in Mandarin, Cantonese, Hakka(客家话), and in very little Spanish.
+          </p>
+          <a href="Jimmy Zhong resume.pdf" download>Download PDF Resume</a>
+          </div>
         </div>
       </div>
+    </section>
+  
+      <div class="content-divider"></div>
+  
+      <!---Blogs---->
+      <section id="Blogs">
+      <h1 class="text-center">My Blogs</h1>
+      <div class="row">
+        <div class = "col-lg-6">
+          <div class="container">
+            <h3 class="text-center"><small class="text-muted">Professional (technical) Blogs</small></h3>
+            <ul>
+              <li>Why Cloud Computing (A Short Intro)?
+                <a href="http://blogs.carleton.edu/zhongj2/2020/03/30/why-cloud-computing-a-short-intro/">[link]</a>
+              </li>
+              <li>SQL vs. NoSQL Databases, What…?
+                <a href="http://blogs.carleton.edu/zhongj2/2020/03/30/sql-nosql-databases-what/">[link]</a>
+              </li>
+              <li>Download More Than 100,000 Rows of Web Visit Record from Google Analytics API (Python)
+                <a href="https://github.com/JuntaoZhong/GoogleAnalytics-Download-Million-of-Rows-of-Data">[github repository]</a>
+              <li>Some Lab Documentations While Getting CCNP Certification
+                <a href="https://github.com/JuntaoZhong//CCNP-public">[link]</a>
+              </li>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class = "col-lg-6">
+          <h3 class ="text-center"><small class="text-muted">Personal Diary</small></h3>
+          <ul>Under Construction</ul>
+        </div>
+      </div>
+      </section>
+      
+      <div class="content-divider"></div>
+  
+      <!---Links---->
+      <section id="Links&Contacts">
+        <h1 class="text-center">Links & Contacts</h1>
+        <div class="container">
+          <h6 class="text-left">
+            <a href="https://carletondatasquad.bitbucket.io/">Carleton DataSquad:</a> 
+            I currently work as a Curricular and Research Data Assistant. 
+          </h6>
+          <br>
+          <h6 class="text-left">
+            <a href="http://2018.igem.org/Team:iTesla-SoundBio">Team:iTesla-SoundBio in SoundBio Community Lab:</a>
+             My team competed in International Genetically Engineered Machine (iGEM), 
+            I conducted experiments to bioengineer <I>E. coli</I> and <I>B. subtilis</I> for LAL Factor C production.
+            I also <a href="http://2018.igem.org/Team:iTesla-SoundBio/Team">built the website for our 2018 competition</a>.
+            
+          </h6>
+          <br>
+          <h6 class="text-left">
+            <a href="http://www.projectfeed1010.com">Project Feed 1010: </a>
+            A non-profit organization that promotes aquaponic system as a sustainable approach for future agriculture.
+            As <a href="http://www.projectfeed1010.com/blog/2018/11/15/2018-ambassador-juntao-zhong/">an ambassafor of Project Feed 1010</a>, I built a system with fish tank and hydroponically grown plants at my high school.
+            As such, fish tank + hydroponic serves educational and aesthetic purpose (though with little food production).
+          </h6>
+          <br>
+          <h6 class="text-center">
+            <small class="text-muted">
+              Carleton College, 300 North College St., Northfield, MN 55057 <br>
+              github: https://github.com/JuntaoZhong <br>
+              Email: zhongj2@carleton.edu
+            </small>
+          </h6>
+        </div>
+      </section>
     </div>
 
-    <div class="content-divider"></div>
-
-    <!---Blogs---->
-    <section id="Blogs">
-    <h1 class="text-center">My Blogs</h1>
-    <div class="row">
-      <div class = "col-lg-6">
-        <h3 class="text-center"><small class="text-muted">Professional (technical) Blogs</small></h3>
-        <ul>Under Construction</ul>
-      </div>
-      <div class = "col-lg-6">
-        <h3 class ="text-center"><small class="text-muted">Personal Diary</small></h3>
-        <ul>Under Construction</ul>
-      </div>
-    </div>
-    </section>
-    
-    <div class="content-divider"></div>
-
-    <!---Links---->
-    <section id="Links&Contacts">
-      <h1 class="text-center">Links & Contacts</h1>
-      <div class="container">
-        <h6 class="text-left">
-          <a href="https://carletondatasquad.bitbucket.io/">Carleton DataSquad:</a> 
-          I currently work as a Curricular and Research Data Assistant. 
-        </h6>
-        <br>
-        <h6 class="text-left">
-          <a href="http://2018.igem.org/Team:iTesla-SoundBio">Team:iTesla-SoundBio in SoundBio Community Lab:</a>
-           My team competed in International Genetically Engineered Machine (iGEM), 
-          I conducted experiments to bioengineer <I>E. coli</I> and <I>B. subtilis</I> for LAL Factor C production.
-          I also <a href="http://2018.igem.org/Team:iTesla-SoundBio/Team">built the website for our 2018 competition</a>.
-          
-        </h6>
-        <br>
-        <h6 class="text-left">
-          <a href="http://www.projectfeed1010.com">Project Feed 1010: </a>
-          A non-profit organization that promotes aquaponic system as a sustainable approach for future agriculture.
-          As <a href="http://www.projectfeed1010.com/blog/2018/11/15/2018-ambassador-juntao-zhong/">an ambassafor of Project Feed 1010</a>, I built a system with fish tank and hydroponically grown plants at my high school.
-          As such, fish tank + hydroponic serves educational and aesthetic purpose (though with little food production).
-        </h6>
-        <br>
-        <h6 class="text-center">
-          <small class="text-muted">
-            Carleton College, 300 North College St., Northfield, MN 55057 <br>
-            github: https://github.com/JuntaoZhong <br>
-            Email: zhongj2@carleton.edu
-          </small>
-        </h6>
-      </div>
-
-    </section>
-
+    <script>
+      window.onscroll = function() {myFunction()};
+      
+      var navbar = document.getElementById("navbar");
+      var sticky = navbar.offsetTop;
+      
+      function myFunction() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky")
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      }
+      </script>
   </body>
 
 </html>
