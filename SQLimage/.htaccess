@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Stop and Enter Your Username and Password. Members Only"
+AuthUserFile /SQLimage/.htAuth
+require valid-user
