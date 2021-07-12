@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Jimmy's DNA Sequence Aligner (BLAST)">
+    <meta name="author" content="Jimmy Juntao Zhong">
+
+    <title>JavaScript Sequence Aligner</title>
+    <link rel="shortcut icon" href="img/webIcon.png" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootStrap/bootstrap.css" rel="stylesheet">
+    <link href="jimmyLocal.css" rel="stylesheet">
+    <script language="JavaScript" src="sequence_aligning.js"></script>
+    <script language="JavaScript" src="jimmyUI.js"></script>
+    
+  </head>
+  <!-- Navigation -->
+  <div id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="https://juntaozhong.github.io/">Jimmy (Juntao) Zhong</a>
+      <div class="collapse navbar-collapse">
+        <input type = "button" value="What is DNA sequence alignment???" id="information_sign_button"></input>
+      </div>
+      <aside>
+        <a href="index.html"><button>Back To Home</button></a>
+      </aside>
+    </nav>
+  </div>
+
+  <body>
+    <div id="information_sign_content">
+      <ul>Help is coming [this page is not finished yet]:
+          <li>
+              DNA sequence alignment allows slightly different DNA fragment to be recognized together. For example, we understand that "understood" is quite similar to "understand"
+          </li>
+      </ul>
+      <ul> use dynamic programming </ul>
+      <ul>Enjoy my little sequence alignment program!
+          <li>Developers: <b>Jimmy Zhong</b>, July 2021</li>
+          <li>Inspired by Heng Li at DFCI & Harvard University https://github.com/lh3/bioseq-js</li>
+      </ul>
+    </div>
+
+    <div class="content">
+        <p>
+        Example: <input type="button" value="longer DNA"
+        onClick="document.getElementById('target').value = document.getElementById('pa-MT').value;
+                document.getElementById('query').value  = document.getElementById('hs-dloop').value;">
+        (description... this page is under construction)
+        </p>
+        <p>
+        Target sequence:<br>
+        <textarea id="target" rows="10" cols="110">ATAGCTAGCTAGCATAAGC</textarea>
+        </p>
+        <p>
+        Query sequence: <input type="button" value="Reverse DNA Sequence (Complimentary Sequence + Reverse)"
+        onClick="document.getElementById('query').value = reverse_DNA_direction(document.getElementById('query').value);"><br>
+        <textarea id="query" rows="10" cols="110">AGCTAcCGCAT</textarea>
+        </p>
+        <p>
+        <p>global alignment (local alignment under progress)</p>
+        <input type="button" value="Align" onClick="do_align();"/>
+        match score: <input size="3" value="1" id="match"/>
+        mismatch: <input size="3" value="-2" id="mismatch"/>
+        gap open: <input size="3" value="-2" id="gapOpen"/>
+        extension: <input size="3" value="-1" id="gapExtent"/>
+        <span id="runtime" style="color: gray;"></span>
+        </p>
+        <textarea id="out" rows="1" readOnly style="border: 0; overflow: auto;" cols="110" wrap="on"></textarea>
+        <textarea id="hs-dloop" style="display: none">TTCTTTCATGGGGAAGCAGATTTGGGTACCACCCAAGTATTGACTCACCCATCAACAACCGCTATGTATTTCGTACATTACTGCCAGCCACCATGAATATTGTACGGTACCATAAATACTTGACCACCTGTAGTACATAAAAACCCAATCCACATCAAAACCCCCTCCCCATGCTTACAAGCAAGTACAGCAATCAACCCTCAACTATCACACATCAACTGCAACTCCAAAGCCACCCCT
+        </textarea>
+        <textarea id="pa-MT" style="display: none">TTCTTTCATGGGGAAGCAGATTTGGGTACCACCCAAGTATTGACTCACCCATCAACAACCGCTATGTATTTCGTACATTACTGCCAGCCACCATGAATATTGTACGGTACCATAAATACTTGACCACCTGTAGTACATAAAAACCCAATCCACATCAAAACCCCCTCCCCATGCTTACAAGCAAGTACAGCAATCAACCCTCAACTATCACACATCAACTGCAACTCCAAAGCCACCCCT
+        </textarea>
+      </div>
+  </body>
+
+</html>
