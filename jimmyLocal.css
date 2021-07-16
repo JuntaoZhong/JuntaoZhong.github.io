@@ -1,5 +1,12 @@
 body {margin-top: 30px;}
-textarea {font-family: 'Courier New'; font-weight: bold; overflow: auto }
+textarea {
+  font-family: 'Courier New';
+  word-wrap: break-word;
+  font-weight: bold;
+  overflow: auto;
+  width: 80%;
+  max-width: 80%;
+}
 img {
   border: 1px solid #ddd;
   border-radius: 4px;

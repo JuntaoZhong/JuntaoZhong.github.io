@@ -29,18 +29,15 @@ function do_align(){
 	var gapExtent = parseInt(document.getElementById('gapExtent').value);
 
 	var rst = align(target, query, [matchScore, mismatchScore], [gapOpen, gapExtent]);
-	var str = 'score: ' + rst[0] + '\n';
-	str += 'start: ' + rst[1] + '\n';
-	str += 'cigar summary: ' + bsa_cigar2str(rst[2]) + '\n';
-	str += 'alignment:\n\n';
-	var fmt = bsa_cigar2gaps(target, query, rst[1], rst[2]);
+	var str = 'alignment score: ' + rst[0] + '\n';
+	str += 'alignment:\n';
+	var fmt = printGaps(target, query, rst[1], rst[2]);
 
 	var linelen = 100, n_lines = 8;
 	for (var l = 0; l < fmt[0].length; l += linelen) {
-	str += fmt[0].substr(l, linelen) + '\n';
-	str += fmt[2].substr(l, linelen) + '\n';
-	str += fmt[1].substr(l, linelen) + '\n\n';
-	n_lines += 4;
+		str += fmt[0].substr(l, linelen) + '\n';
+		str += fmt[2].substr(l, linelen) + '\n';
+		str += fmt[1].substr(l, linelen) + '\n\n';
 	}
 
 	document.getElementById('out').value = str;
@@ -49,3 +46,22 @@ function do_align(){
 	var elapse = (new Date().getTime() - time_start) / 1000.0;
 	document.getElementById('runtime').innerHTML = "in " + elapse.toFixed(3) + "s";
 }
+
+var humanDNA=`ATGGTGCTGTCTCCTGCCGACAAGACCAACGTCAAGGCCGCCTGGGGTAAGGTCGGCGCG\
+CACGCTGGCGAGTATGGTGCGGAGGCCCTGGAGAGGATGTTCCTGTCCTTCCCCACCACC\
+AAGACCTACTTCCCGCACTTCGACCTGAGCCACGGCTCTGCCCAGGTTAAGGGCCACGGC\
+AAGAAGGTGGCCGACGCGCTGACCAACGCCGTGGCGCACGTGGACGACATGCCCAACGCG\
+CTGTCCGCCCTGAGCGACCTGCACGCGCACAAGCTTCGGGTGGACCCGGTCAACTTCAAG\
+CTCCTAAGCCACTGCCTGCTGGTGACCCTGGCCGCCCACCTCCCCGCCGAGTTCACCCCT\
+GCGGTGCACGCCTCCCTGGACAAGTTCCTGGCTTCTGTGAGCACCGTGCTGACCTCCAAA\
+TACCGTTAA`
+
+var fishDNA=`ATGAGTCTCACTGCCAAGGACAAGGAAACAGTCAAAGCCTTCTGGGCTAAAGTGGCTCCC\
+AAGGCTGAAGACATTGGCCAGGATGCTCTGTCCAGGATGCTGGCGGTTTACCCACAGACC\
+AAGACCTACTTCTCCCACTGGAAGGACATGAGTGCCGGCTCTGCTCCAGTGAAGAAGCAC\
+GGAGCTACGGTGATGGGTGGAGTAGCTGATGCTGTGACCAAAATCGATGATCTGACCTCA\
+GGTCTCCTGAGCCTGAGTGAGCTGCATGCTTTCACTCTTAGAGTGGACCCTGCCAACTTC\
+AAGATCCTGGCACACAACATCCTTGTGGTCTTCGCCATCAAGTTTCCCACCGACTTCACC\
+CCTGAGGTCCATGTGTCTGTGGACAAGTTCTTGGCTGCTCTGGCCCGAGCCCTCTCCGAG\
+AAGTACAGATAA`
+

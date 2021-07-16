@@ -45,33 +45,30 @@
 
     <div class="content">
         <p>
-        Example: <input type="button" value="longer DNA"
-        onClick="document.getElementById('target').value = document.getElementById('pa-MT').value;
-                document.getElementById('query').value  = document.getElementById('hs-dloop').value;">
-        (description... this page is under construction)
+        Example: <input type="button" value="See Some Real DNA"
+        onClick="document.getElementById('target').value = humanDNA; document.getElementById('query').value  = fishDNA;">
+        (Hemoglobin &alpha; subunit: Human and Southern Platyfish <a href="https://www.genome.jp/entry/xma:102227809">[KEGG Database]</a>)
         </p>
         <p>
         Target sequence:<br>
-        <textarea id="target" rows="10" cols="110">ATAGCTAGCTAGCATAAGC</textarea>
+        <textarea id="target" rows="4">ATAGCCTAGCTAGCATTAAGCGCTAGCTAGCATAA</textarea>
         </p>
         <p>
-        Query sequence: <input type="button" value="Reverse DNA Sequence (Complimentary Sequence + Reverse)"
+        Query: <input type="button" value="Reverse DNA (complimentary sequence + flip order)"
         onClick="document.getElementById('query').value = reverse_DNA_direction(document.getElementById('query').value);"><br>
-        <textarea id="query" rows="10" cols="110">AGCTAcCGCAT</textarea>
+        <textarea id="query" rows="4">ATAGCTAGCTAGCATAAGCGCTAGCTAGCATAA</textarea>
         </p>
         <p>
-        <p>global alignment (local alignment under progress)</p>
+        <p>global alignment. </p>
         <input type="button" value="Align" onClick="do_align();"/>
         match score: <input size="3" value="1" id="match"/>
-        mismatch: <input size="3" value="-2" id="mismatch"/>
+        mismatch: <input size="3" value="-1" id="mismatch"/>
         gap open: <input size="3" value="-2" id="gapOpen"/>
         extension: <input size="3" value="-1" id="gapExtent"/>
-        <span id="runtime" style="color: gray;"></span>
+        <span id="runtime"></span>
         </p>
-        <textarea id="out" rows="1" readOnly style="border: 0; overflow: auto;" cols="110" wrap="on"></textarea>
-        <textarea id="hs-dloop" style="display: none">TTCTTTCATGGGGAAGCAGATTTGGGTACCACCCAAGTATTGACTCACCCATCAACAACCGCTATGTATTTCGTACATTACTGCCAGCCACCATGAATATTGTACGGTACCATAAATACTTGACCACCTGTAGTACATAAAAACCCAATCCACATCAAAACCCCCTCCCCATGCTTACAAGCAAGTACAGCAATCAACCCTCAACTATCACACATCAACTGCAACTCCAAAGCCACCCCT
-        </textarea>
-        <textarea id="pa-MT" style="display: none">TTCTTTCATGGGGAAGCAGATTTGGGTACCACCCAAGTATTGACTCACCCATCAACAACCGCTATGTATTTCGTACATTACTGCCAGCCACCATGAATATTGTACGGTACCATAAATACTTGACCACCTGTAGTACATAAAAACCCAATCCACATCAAAACCCCCTCCCCATGCTTACAAGCAAGTACAGCAATCAACCCTCAACTATCACACATCAACTGCAACTCCAAAGCCACCCCT
+        <textarea id="out" rows="6" readOnly> press "align" to see the result
+ Note: query should be shorter than the target sequence.
         </textarea>
       </div>
   </body>
